@@ -35,6 +35,18 @@ NULL,1,"Java od Betonowych Podstaw","2015-08-13","1123-13-12-1-12-12-2",
 );
 
 insert into books
+values(
+NULL,1,"Java od Sófitu","2015-08-13","1123-13-12-1-12-12-2",
+"Programowanie Java",624,"Helion",123.0,0
+);
+
+insert into books
+values(
+NULL,1,"Java dla topornych","2015-08-13","1123-13-12-1-12-12-2",
+"Programowanie Java",624,"Helion",101.0,0
+);
+
+insert into books
 (book_id,
 author_id,
 title,
@@ -45,7 +57,11 @@ page_count,
 price)
 values(
 NULL,1,"Beton i zelazo","2015-08-13","1123-13-12-1-12-12-2",
-"Programowanie Java",624,89.0
+"Programowanie Java",624,11.0
 );
 
-select * from books;
+select * from books where price < 100;
+select distinct price from books;
+
+select sum(page_count) as suma from books;
+select * from books where exists(select * from books where price < 100);
